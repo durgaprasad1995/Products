@@ -16,21 +16,13 @@ const ListOfProducts = () => {
     const selectedItems = ProductsList.Products.find((data, index) => {
       if (data.productId === e.target.id) {
         setCount(count + 1);
-        // var test = Object.assign(...data,{count:count})
-        // console.log("tttt",test)
-        // var price = count*data.Price;
-        // if(price >= 5000){
-        // var test5 =  price%10;
-        // }
         return data;
       }
     });
 
     Object.assign(selectedItems, { count: count });
     selectedProducts.push(selectedItems);
-    // setSelectedProducts([...selectedProducts]);
     setSelectedProducts([...new Set(selectedProducts)]);
-    console.log("selectedProducts", selectedProducts);
   };
 
   const clearProduct = () => {
